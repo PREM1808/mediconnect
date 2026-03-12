@@ -6,8 +6,9 @@ import Landing from "../pages/Landing";
 // Auth Pages
 import AdminLogin from "../pages/auth/AdminLogin";
 import DoctorLogin from "../pages/auth/DoctorLogin";
+import DoctorRegister from "../pages/auth/DoctorRegister"; // Imported
 import PatientLogin from "../pages/auth/PatientLogin";
-import PatientRegister from "../pages/auth/PatientRegister"; // <--- MAKE SURE THIS EXISTS
+import PatientRegister from "../pages/auth/PatientRegister"; 
 
 // Dashboards
 import AdminDashboard from "../pages/admin/AdminDashboard";
@@ -21,15 +22,18 @@ function AppRoutes() {
         {/* Public Routes */}
         <Route path="/" element={<Landing />} />
 
-        {/* Auth Routes */}
+        {/* Admin Routes */}
         <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+
+        {/* Doctor Routes */}
         <Route path="/doctor/login" element={<DoctorLogin />} />
+        <Route path="/doctor/register" element={<DoctorRegister />} /> {/* ADDED THIS */}
+        <Route path="/doctor/dashboard" element={<DoctorDashboard />} />
+
+        {/* Patient Routes */}
         <Route path="/patient/login" element={<PatientLogin />} />
         <Route path="/patient/register" element={<PatientRegister />} />
-
-        {/* Dashboard Routes */}
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route path="/doctor/dashboard" element={<DoctorDashboard />} />
         <Route path="/patient/dashboard" element={<PatientDashboard />} />
       </Routes>
     </BrowserRouter>
